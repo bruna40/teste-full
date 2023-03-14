@@ -12,7 +12,7 @@ export default function Header() {
                 <button
                     type="button"
                     onClick={search}
-                >Search</button>
+                >Filtrar</button>
             </div>
         </header>
     )

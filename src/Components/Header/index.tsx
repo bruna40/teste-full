@@ -1,19 +1,18 @@
-import { HeaderContainer } from "./style"
+import React, { useState } from 'react'
+import { HeaderContainer } from "../../Pages/Home/style"
 import Button  from '../../Components/Button/index'
+import Buscador from '../../Components/Buscador/index'
 
 export default function Header() {
-    function search() {
-        console.log("search")
-    }
+    const [search, setSearch] = useState('');
     return (
         <HeaderContainer>
             <div>
                 <Button />
-                <input type="text" placeholder="Search" />
-                <button
-                    type="button"
-                    onClick={search}
-                >Filtrar</button>
+                <Buscador 
+                    value={search}
+                    onChange={(value) => setSearch(value)}
+                />
             </div>
         </HeaderContainer>
     )

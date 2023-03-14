@@ -1,13 +1,23 @@
 import tabela from '../../data/teste.json';
 import { useState, useEffect } from 'react';
 import { TableList } from './style';
+import { IFilter } from '../../@types/IFilter';
+import IBook from '../../@types/IBoook';
 
-export default function Table() {
+export default function Table({value}: IFilter) {
     const [books, setBooks] = useState(tabela);
 
+    function testaBusca(titulo: string) {
+        const regex = new RegExp(value, 'i');
+        return regex.test(titulo);
+      }
+
     useEffect(() => {
-        setBooks(tabela);
-    }, []);
+        const novaLista = tabela.filter((book: IBook) => 
+        testaBusca(book.title) || testaBusca(book.author) || testaBusca(book.language)) 
+
+        setBooks(novaLista)
+    }, [value])
 
 
 

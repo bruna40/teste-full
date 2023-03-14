@@ -1,19 +1,20 @@
+import { HeaderContainer } from "./style"
+import Button  from '../../Components/Button/index'
+
 export default function Header() {
     function search() {
         console.log("search")
     }
     return (
-        <header>
+        <HeaderContainer>
             <div>
-                Logo
-            </div>
-            <div>
+                <Button />
                 <input type="text" placeholder="Search" />
                 <button
                     type="button"
                     onClick={search}
                 >Filtrar</button>
             </div>
-        </header>
+        </HeaderContainer>
     )
 }

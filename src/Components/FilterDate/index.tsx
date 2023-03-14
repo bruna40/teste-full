@@ -1,11 +1,15 @@
+import { FilterDateContainer } from './style'
+
 export default function FilterDate() {
     return (
-        <div>
-            <p>Filtrar ano de publicação:</p>
-            <input type="number" placeholder="Ano de publicação" />
-            <p>até</p>
-            <input type="number" placeholder="Ano de publicação" />
-            <button type="button">Filtrar</button>
-        </div>
+        <FilterDateContainer>
+            <form>
+                <label>Filtrar ano de publicação:</label>
+                <input type="number" placeholder="Ano de publicação" />
+                <label>até</label>
+                <input type="number" placeholder="Ano de publicação" />
+                <button type="button">Filtrar</button>
+            </form>
+        </FilterDateContainer>
     )
 }

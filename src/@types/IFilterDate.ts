@@ -1,5 +1,4 @@
-export interface IFilter {
+export interface IFilterDate {
     value: string;
-    order: number;
     setValue: React.Dispatch<React.SetStateAction<string>>
 }

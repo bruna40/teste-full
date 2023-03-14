@@ -10,6 +10,7 @@ export default function Buscador({value, onChange}: IBuscador) {
                 placeholder="Search"
                 value={value}
                 onChange={(e) => onChange(e.target.value)}
+                data-testid="input__search"
             />
             <MagnifyingGlass size={32} />
         </Input>

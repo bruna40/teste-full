@@ -140,16 +140,6 @@
         "year": 1942
       },
       {
-        "author": "Paul Celan",
-        "country": "Romania, France",
-        "imageLink": "images/poems-paul-celan.jpg",
-        "language": "German",
-        "link": "\n",
-        "pages": 320,
-        "title": "Poems",
-        "year": 1952
-      },
-      {
         "author": "Louis-Ferdinand C\u00e9line",
         "country": "France",
         "imageLink": "images/voyage-au-bout-de-la-nuit.jpg",
@@ -178,16 +168,6 @@
         "pages": 544,
         "title": "The Canterbury Tales",
         "year": 1450
-      },
-      {
-        "author": "Anton Chekhov",
-        "country": "Russia",
-        "imageLink": "images/stories-of-anton-chekhov.jpg",
-        "language": "Russian",
-        "link": "https://en.wikipedia.org/wiki/List_of_short_stories_by_Anton_Chekhov\n",
-        "pages": 194,
-        "title": "Stories",
-        "year": 1886
       },
       {
         "author": "Joseph Conrad",

@@ -10,18 +10,19 @@ export const Input = styled.div`
     justify-content: space-between;
     padding: 0 15px;
     width: 25rem;
-    @media (max-width: $mobile) {
-        width: 100%;
-    }
     input {
         background-color: #E4E4E4;
+        padding-top: -2rem;
+        padding-bottom: -2rem;
+        padding-left: 0.5rem;
+        padding-right: 1.5rem;
         border: none;
         color: $black;
-        font-size: 1.5rem;
+        font-size: 1rem;
         font-weight: bold;
         height: 100%;
         outline: none;
-        width: 100%;
+        width: 100s%;
         &::placeholder {
             color: #4C4D5E;
         }

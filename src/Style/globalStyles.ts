@@ -6,6 +6,8 @@ type props = {
     theme: {
         background: string;
         button: string;
+        th: string;
+        header: string;
     };
 };
 
@@ -25,4 +27,11 @@ export default createGlobalStyle`
         color: white;
         background-color: ${( props:props ) => props.theme.button};
     };
+    th {
+        background-color: ${( props:props ) => props.theme.th};
+    }
+    header {
+        background: ${( props:props ) => props.theme.header};
+    }
+
 `;

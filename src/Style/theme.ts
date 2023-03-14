@@ -1,9 +1,13 @@
 export const lightTheme = {
-    background: '#fff',
-    button: 'orange',
+    background: '#f5f5f5',
+    button: '#993399',
+    th: '#993399',
+    header: '#993399',
 };
 
 export const darkTheme = {
     background: '#323238',
-    button: 'blue',
+    button: 'gray',
+    th: '#f5f5f5',
+    header: '#7C7C8A',
 };

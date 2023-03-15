@@ -39,7 +39,7 @@ services:
   # Serviço que irá rodar o mongodb
   mongodb:
     image: mongo:5.0.7
-    container_name: car_shop_db
+    container_name: book_store_db
     volumes:
       - ./:/app
     restart: always

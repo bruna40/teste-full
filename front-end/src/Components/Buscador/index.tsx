@@ -1,5 +1,5 @@
 import { MagnifyingGlass } from "@phosphor-icons/react";
-import { IBuscador } from "../../@types/IBuscador";
+import { IBuscador } from "../../interfaces/IBuscador";
 import { Input } from "./style";
 
 export default function Buscador({value, onChange}: IBuscador) {

@@ -1,13 +1,21 @@
 import tabela from '../../data/teste.json';
 import { useState, useEffect} from 'react';
 import { TableList,FilterDateContainer, P } from './style';
-import { IFilter } from '../../@types/IFilter';
-import IBook from '../../@types/IBoook';
+import { IFilter } from '../../interfaces/IFilter';
+import IBook from '../../interfaces/IBoook';
 
-export default function Table({value,order}: IFilter) {
+export default function Table({value}: IFilter) {
     const [books, setBooks] = useState(tabela);
     const [anoInicial, setAnoInicial] = useState('');
     const [anoFinal, setAnoFinal] = useState('');
+    const [itemPerPage, setItemPerPage] = useState(10);
+    const [currentPage, setCurrentPage] = useState(10);
+
+    function getItemsPerPage() {
+        const startIndex = (currentPage - 1) * itemPerPage;
+        const endIndex = startIndex + itemPerPage;
+        return books.slice(startIndex, endIndex);
+    }
 
     function handleFilterDate(){
         const booksFiltered = tabela.filter((book: IBook) => book.year >= Number(anoInicial) && book.year <= Number(anoFinal));
@@ -23,12 +31,16 @@ export default function Table({value,order}: IFilter) {
         const novaLista = tabela.filter((book: IBook) => 
         testaBusca(book.title) || testaBusca(book.author) || testaBusca(book.language)) 
         setBooks(novaLista)
-    }, [value])
+        setBooks(getItemsPerPage());
+    }, [value, currentPage])
 
     useEffect(() => {
         handleFilterDate();
         setBooks(tabela)
-    }, [])
+        setBooks(getItemsPerPage());
+    }, [currentPage])
+
+
 
     return (
         <>
@@ -81,7 +93,24 @@ export default function Table({value,order}: IFilter) {
                         ))}
                     </tbody>
                 </table>
+ 
             </TableList>
+            <span>
+                {books.length > 10 && (
+                    <div>
+                        <button
+                            type="button"
+                            onClick={() => setCurrentPage(currentPage - 1)}
+                            disabled={currentPage === 1}
+                        >Anterior</button>
+                        <button
+                            type="button"
+                            onClick={() => setCurrentPage(currentPage + 1)}
+                            disabled={currentPage === Math.ceil(books.length / itemPerPage)}
+                        >Próximo</button>
+                    </div>
+                )}
+            </span>
 
         </>
     )

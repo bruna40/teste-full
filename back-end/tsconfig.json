@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+      "outDir": "./dist",
+      "rootDir": ".",
+      "target": "es2019",
+      "module": "commonjs",
+      "typeRoots": [
+        "src/@types",
+        "./node_modules/@types"
+      ],
+      "esModuleInterop": true,
+      "forceConsistentCasingInFileNames": true,
+      "strict": true,
+      "skipLibCheck": true,
+      "strictPropertyInitialization": false
+    },
+    "exclude": ["node_modules"]
+  }
+  
+  // Estava ocorrendo um erro em que a variável não estava sendo reconhecida, mesmo estando declarada.
+  // Para resolver o problema e nao precisar colocar o ! no final da variável, foi necessário adicionar o strictPropertyInitialization como false.

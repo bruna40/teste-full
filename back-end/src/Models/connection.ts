@@ -1,3 +1,5 @@
+// Connect to the database
+
 import mongoose from 'mongoose';
 import 'dotenv/config';
 

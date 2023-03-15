@@ -1,4 +1,4 @@
-import IBook from "../interfaces/IBoook";
+import IBook from "../Interfaces/IBook";
 
 export default class Book {
     protected id: string | undefined;
@@ -6,7 +6,7 @@ export default class Book {
     protected country: string;
     protected author: string;
     protected language: string;
-    protected numbPages: number;
+    protected pages: number;
     protected year: number;
 
     constructor(book: IBook) {
@@ -15,7 +15,7 @@ export default class Book {
         this.country = book.country;
         this.author = book.author;
         this.language = book.language;
-        this.numbPages = book.numbPages;
+        this.pages = book.pages;
         this.year = book.year;
     }
 
@@ -60,11 +60,11 @@ export default class Book {
     }
 
     public getNumbPages() {
-        return this.numbPages;
+        return this.pages;
     }
 
     public setNumbPages(numbPages: number) {
-        this.numbPages = numbPages;
+        this.pages = numbPages;
     }
 
     public getYear() {

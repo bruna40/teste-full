@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { FilterDateContainer } from './style'
-import { IFilterDate } from '../../@types/IFilterDate';
-import IBook from '../../@types/IBoook';
+import { IFilterDate } from '../../interfaces/IFilterDate';
+import IBook from '../../interfaces/IBoook';
 
 export default function FilterDate({value }: IFilterDate){
     const [anoInicial, setAnoInicial] = useState('');

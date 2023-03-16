@@ -21,6 +21,8 @@
 
 ## Como rodar o projeto
 
+obs.: Vai ocorrer um erro na parte de testes, pois não consegui configurar o package.json para rodar os testes, mas os testes estão funcionando.
+
 ### Front-end
 
 * Na pasta fron-end:
@@ -54,6 +56,8 @@ OBS: as pastas como pages e componentes foram criadas no formato em que cada ele
 * Buscador: É um componente que foi feito para filtrar os dados da tabela por nome do livro, idioma,autor.
 
 obs: No momento estava tendo dificuldades para conectar o filterDate com o component Table, então a logica foi para a parte de tabela.
+obs2: Não consegui fazer a paginação dos dados, tentei utilizar hooks personalizados, mas não consegui fazer funcionar.
+link do hook personalizado: https://www.npmjs.com/package/react-use-pagination-hook
 
 
 - Pages: contém as páginas da aplicação
@@ -64,7 +68,7 @@ obs: No momento estava tendo dificuldades para conectar o filterDate com o compo
 
 - data: contém os dados utilizado na tabela
 
-- services: essa pasta foi criada para caso exista alguma função recorrente, como por exemplo uma função que faz uma requisição para a api, essa função pode ser colocada nessa pasta.
+- services: essa pasta foi criada para caso exista alguma função recorrente, coloquei uma função para fazer a requisição para a api da banco de dados e retornar os dados.
 
 - styles: contém os estilos globais da aplicação
 
@@ -88,6 +92,7 @@ Na pasta test contém os testes da aplicação
 * Middlewares: contém os middlewares da aplicação, criei um para caso de erro, caso ocorra algum erro na aplicação, ele será mostrado na tela.
 * interfaces: contém as interfaces da aplicação
 * test: contém os testes da aplicação
+* mocks: contém os exemplos para fazer os testes
 
 ### Explicando as rotas
 

@@ -1,21 +1,23 @@
 import tabela from '../../data/teste.json';
 import { useState, useEffect} from 'react';
-import { TableList,FilterDateContainer, P } from './style';
+import { TableList,FilterDateContainer, P, PaginationContainer } from './style';
 import { IFilter } from '../../interfaces/IFilter';
 import IBook from '../../interfaces/IBoook';
+import usePagination from 'react-use-pagination-hook';
 
 export default function Table({value}: IFilter) {
     const [books, setBooks] = useState(tabela);
     const [anoInicial, setAnoInicial] = useState('');
     const [anoFinal, setAnoFinal] = useState('');
-    const [itemPerPage, setItemPerPage] = useState(10);
-    const [currentPage, setCurrentPage] = useState(10);
+    
+    const {
+        pageList,
+        goNext,
+        goBefore,
+        setPage,
+        currentPage,
+    } = usePagination({ numOfPage: 10, totalPage: 10})
 
-    function getItemsPerPage() {
-        const startIndex = (currentPage - 1) * itemPerPage;
-        const endIndex = startIndex + itemPerPage;
-        return books.slice(startIndex, endIndex);
-    }
 
     function handleFilterDate(){
         const booksFiltered = tabela.filter((book: IBook) => book.year >= Number(anoInicial) && book.year <= Number(anoFinal));
@@ -30,7 +32,7 @@ export default function Table({value}: IFilter) {
     useEffect(() => {
         const novaLista = tabela.filter((book: IBook) => 
         testaBusca(book.title) || testaBusca(book.author) || testaBusca(book.language)) 
-        setBooks(novaLista)
+        setBooks(novaLista);
     }, [value])
 
     useEffect(() => {
@@ -38,9 +40,6 @@ export default function Table({value}: IFilter) {
         setBooks(tabela)
     }, [currentPage])
 
-    useEffect(() => {
-        setBooks(getItemsPerPage());
-    }, [currentPage, itemPerPage])
 
 
 
@@ -101,20 +100,22 @@ export default function Table({value}: IFilter) {
  
             </TableList>
             <span>
-                {books.length > 10 && (
-                    <div>
+                <PaginationContainer>
+
+                    <button onClick={() => goBefore()}>{'<'}</button>
+                    <ul className="pages">
+                    {pageList.map((page) => (
                         <button
-                            type="button"
-                            onClick={() => setCurrentPage(currentPage - 1)}
-                            disabled={currentPage === 1}
-                        >Anterior</button>
-                        <button
-                            type="button"
-                            onClick={() => setCurrentPage(currentPage + 1)}
-                            disabled={currentPage === Math.ceil(books.length / itemPerPage)}
-                        >Próximo</button>
-                    </div>
-                )}
+                        onClick={() => setPage(page)}
+                        className={currentPage === page ? 'selected' : ''}
+                        key={page}
+                        >
+                        {page}
+                        </button>
+                    ))}
+                    </ul>
+                    <button onClick={() => goNext()}>{'>'}</button>
+                </PaginationContainer>
             </span>
 
         </>

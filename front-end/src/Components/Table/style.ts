@@ -99,3 +99,21 @@ export const FilterDateContainer = styled.div`
         cursor: pointer;
     }
 `;
+
+export const PaginationContainer = styled.div`
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    ul {
+        display: flex;
+        margin-right: 1.5rem;
+
+        button {
+            border: none;
+            margin-left: 0.5rem;
+
+        }
+    }
+`;

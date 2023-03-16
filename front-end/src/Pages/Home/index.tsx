@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Buscador from "../../Components/Buscador/index";
+import Buscador from "../../Components/Search";
 import Button from "../../Components/Button";
 import Table from "../../Components/Table";
 import { HeaderContainer } from './style';

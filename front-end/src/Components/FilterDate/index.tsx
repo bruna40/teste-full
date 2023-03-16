@@ -23,6 +23,7 @@ export default function FilterDate({value }: IFilterDate){
                     placeholder="Ano de publicação"
                     value={anoInicial}
                     onChange={(e) => setAnoInicial(e.target.value)}
+                    data-testid="input_ano_inicial"
 
                 />
                 <label>até</label>
@@ -31,6 +32,7 @@ export default function FilterDate({value }: IFilterDate){
                     placeholder="Ano de publicação"
                     value={anoFinal}
                     onChange={(e) => setAnoFinal(e.target.value)}
+                    data-testid="input_ano_final"
                 />
                 <button
                     type="button"

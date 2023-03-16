@@ -16,6 +16,7 @@ export default function  Modo() {
             <GlobalStyle />
             <ButtonContainer
             onClick={() => setIsDarkTheme(!isDarkTheme)}
+            data-testid="button_color"
             >
                 {
                     isDarkTheme? <Moon size={32} /> : <Sun size={32} />

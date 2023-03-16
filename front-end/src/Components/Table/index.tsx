@@ -54,6 +54,7 @@ export default function Table({value}: IFilter) {
                         placeholder="Ano de publicação"
                         order={anoInicial}
                         onChange={(e) => setAnoInicial(e.target.value)}
+                        data-testid="input_ano_inicial"
 
                     />
                     <label>até</label>
@@ -62,16 +63,18 @@ export default function Table({value}: IFilter) {
                         placeholder="Ano de publicação"
                         order={anoFinal}
                         onChange={(e) => setAnoFinal(e.target.value)}
+                        data-testid="input_ano_final"
                     />
                     <button
                         type="button"
                         onClick={handleFilterDate}
+                        data-testid="button_filtrar"
                     >Filtrar</button>
                 </form>
             </FilterDateContainer>
             <P>{books.length} resultados encontrados</P>
             <TableList>
-                <table>
+                <table data-testid="table">
                     <thead>
                         <tr>
                             <th>Livro</th>

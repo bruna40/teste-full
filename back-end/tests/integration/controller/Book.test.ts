@@ -1,5 +1,4 @@
 import * as sinon from 'sinon';
-import * as chai from 'chai';
 import { Model } from 'mongoose';
 import { expect } from 'chai';
 import request from 'supertest';

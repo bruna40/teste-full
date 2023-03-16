@@ -31,14 +31,16 @@ export default function Table({value}: IFilter) {
         const novaLista = tabela.filter((book: IBook) => 
         testaBusca(book.title) || testaBusca(book.author) || testaBusca(book.language)) 
         setBooks(novaLista)
-        setBooks(getItemsPerPage());
-    }, [value, currentPage])
+    }, [value])
 
     useEffect(() => {
         handleFilterDate();
         setBooks(tabela)
-        setBooks(getItemsPerPage());
     }, [currentPage])
+
+    useEffect(() => {
+        setBooks(getItemsPerPage());
+    }, [currentPage, itemPerPage])
 
 
 
@@ -87,7 +89,7 @@ export default function Table({value}: IFilter) {
                                 <td>{book.language}</td>
                                 <td>{book.year}</td>
                                 <td>
-                                    {book.link}
+                                    <a href={book.link}>Detalhes</a>
                                 </td>
                             </tr>
                         ))}
